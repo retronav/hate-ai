@@ -11,6 +11,7 @@ recognition.onresult = function (event) {
     var current = event.resultIndex;
      var transcript = event.results[current][0].transcript;
      content.textContent = transcript;
-     responsiveVoice.setDefaultVoice("UK English Male");
-     responsiveVoice.speak(transcript);
+     reply(transcript);
  }
+
+ 
