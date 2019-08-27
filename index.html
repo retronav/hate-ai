@@ -6,14 +6,19 @@
 </head>
 <body>
     <button class="talk" onclick="recognition.start();"><i class="fas fa-microphone"></i><br>Talk</button>
-    <button class="stop" onclick="recognition.stop();"><i class="fas fa-microphone-slash"></i>Stop</button>
+    <button class="stop" onclick="recognition.stop();"><i class="fas fa-microphone-slash"></i><br>Stop</button>
     <p class="ques">Did you just said: </p>
         <div class="box">
             <p class="content"></p>
         </div>
+    <p class="ques">AI says: </p>
+            <div class="box">
+                <p id="replx"></p>
+            </div>
     <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/9e07794f8f.js"></script>
+    <script src="inputs.js"></script>
     <script src="reply.js"></script>
+    <script src="https://kit.fontawesome.com/9e07794f8f.js"></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
     <link href="styles.css" rel="stylesheet">
     
