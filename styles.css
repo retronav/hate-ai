@@ -8,6 +8,8 @@ button{
 position: relative;    
 width: 200px;
 height:200px;
+border: 1px solid black;
+border-radius:10px;
 background-color: #2A4494;
 text-align: center;
 color:#44CFCB;

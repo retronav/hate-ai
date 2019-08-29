@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Hate AI</title>
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
 </head>
 <body>
-    <button class="talk" onclick="recognition.start();"><i class="fas fa-microphone"></i><br>Talk</button>
-    <button class="stop" onclick="recognition.stop();"><i class="fas fa-microphone-slash"></i><br>Stop</button>
+    <button id="btn" onclick="recognition.start();"><i class="fas fa-microphone"></i><br>Talk</button>
+    <button id="btn" onclick="recognition.stop();"><i class="fas fa-microphone-slash"></i><br>Stop</button>
     <p class="ques">Did you just said: </p>
         <div class="box">
             <p class="content"></p>
@@ -18,8 +19,13 @@
     <script src="script.js"></script>
     <script src="inputs.js"></script>
     <script src="reply.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
     <script src="https://kit.fontawesome.com/9e07794f8f.js"></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script>$('button').click(function() {
+        $('#btn').css('background-color', '#44CFCB').css('color', '#2A4494');
+    });
+    </script>
     <link href="styles.css" rel="stylesheet">
     
 </body>
