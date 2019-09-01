@@ -13,5 +13,5 @@ recognition.onresult = function (event) {
      content.textContent = transcript;
      reply(transcript);
  }
-
+ var appkey = "f98bb9fb990c53469a7e7f8d8b8bb426";
  
