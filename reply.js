@@ -2,12 +2,8 @@
 
 function reply(transcript) {
     responsiveVoice.setDefaultVoice("UK English Female");
-     if (transcript.includes(("how"||"what"||"today")&&"weather")){
-        var finalText  = weather[Math.floor(Math.random()*weather.length)];
-         responsiveVoice.speak(finalText);
-         document.getElementById("replx").innerHTML= finalText;
-        }
-     else if (transcript.includes('how are you') || transcript.includes('are you fine') || transcript.includes('how are you doing today')) {
+     
+      if (transcript.includes('how are you') || transcript.includes('are you fine') || transcript.includes('how are you doing today')) {
         var finalText = greeting[Math.floor(Math.random()*greeting.length)];
          responsiveVoice.speak(finalText);
          document.getElementById("replx").innerHTML= finalText;
