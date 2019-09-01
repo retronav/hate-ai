@@ -36,3 +36,7 @@ p.ques{
 p.content{
     color: #1A181B;
 }
+pre{
+    background-color: white;
+    font-size: 20px;
+}

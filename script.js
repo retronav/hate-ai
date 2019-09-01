@@ -1,7 +1,7 @@
 const btn = document.querySelector('.talk');
 const content = document.querySelector('.content');
-
-const recognition = new webkitSpeechRecognition();
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
 recognition.interinResults = true;
 recognition.onstart = function () {
     console.log("Now you can microphonee");
