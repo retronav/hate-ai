@@ -47,7 +47,7 @@ function reply(transcript) {
         }
     function httpRequestAsync(url, callback)
  {
-   console.log("loaded");
+   console.log("JSON loaded");
      var httpRequest = new XMLHttpRequest();
      httpRequest.onreadystatechange = () => { 
          if (httpRequest.readyState == 4 && httpRequest.status == 200)
