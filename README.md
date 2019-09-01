@@ -1,5 +1,5 @@
-# hate-ai
-An AI that hates you.
+# HATE AI
+An AI that hates you but still loves you.
 ## Use
 You can use this AI for getting abused, search for weather, check date and time, etc.
 
@@ -9,9 +9,22 @@ You can use this AI for getting abused, search for weather, check date and time,
 >  Weekday,
 >  Weather(kinda nightly),
 >  And more to come...
+
+## Needs to be added
+>>Hotword Detection
  ## Dev
-```bash
-Coded from scratch by a teenager
+ ```bash
+ Coded by a teen 
+ ```
+```javascript
+if(Dev.isTeenager == true){
+ showTalent();
+ Dev.speak("Are you impressed? Let me know if that let you down");
+}
+if(Pro.isImpressed == true){
+findFlexibleJobs();
+Dev.hasReputation(100%);
+}
 ```
 # Check out
 [Hate AI](https://obnoxiousnerd.github.io/hate-ai/)
