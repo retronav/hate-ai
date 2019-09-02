@@ -6,6 +6,14 @@
     <link rel='shortcut icon' href='lol.ico' type='image/x-icon' />
 </head>
 <body>
+        <div id="cover">
+        <div class="container">
+                <div class="btld"></div> 
+                <div class="btld"></div>
+                <br><br><br>
+                <div class="brld"></div><br><br> 
+                <div class="brld"></div></div></div>
+                <div class="bodym" hidden>
     <button id="btn" onclick="recognition.start();"><i class="fas fa-microphone"></i><br>Talk</button>
     <button id="btn" onclick="recognition.stop();"><i class="fas fa-microphone-slash"></i><br>Stop</button>
     <p class="ques">Did you just said: </p>
@@ -16,16 +24,23 @@
             <div class="box">
                 <p id="replx"></p>
             </div>
-    <pre>For weather, say city's name and then 'weather'. For instance, "Mumbai weather" will show real-time weather of Mumbai.</pre>
+    </div>       
     <script src="script.js"></script>
     <script src="inputs.js"></script>
     <script src="reply.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
-   <script src = "https://kit.fontawesome.com/9e07794f8f.js"></script>
+    <script src="https://kit.fontawesome.com/9e07794f8f.js"></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
-    <script>$('button').click(function() {
+    <script>
+       $(document).ready(function() {
+    $("#cover").hide();
+    $(".bodym").show();
+});
+
+        $('button').click(function() {
         $('#btn').css('background-color', '#44CFCB').css('color', '#2A4494');
     });
+
     </script>
     <link href="styles.css" rel="stylesheet">
     
