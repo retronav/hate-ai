@@ -1,9 +1,10 @@
 body{
     text-align: center;
+}
+.bodym{
     background-image:url("background.jpg");
     background-repeat: repeat;
 }
-
 button{
 position: relative;    
 width: 200px;
