@@ -43,7 +43,7 @@ pre{
     text-align:center;
 }
 
-.typer{
+#typer{
     height: 50px;
     width: 300px;
     border: 1px solid grey;

@@ -16,8 +16,15 @@ recognition.onresult = function (event) {
  var appkey = "f98bb9fb990c53469a7e7f8d8b8bb426";
 
  document.getElementById("typeb").addEventListener("click", function(){
-    transcript = document.getElementsByClassName('typer')[0].value;
+    transcript = document.getElementById("typer").value;
     content.textContent = transcript;
     reply(transcript);
+});
+document.getElementById("typer").addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+    transcript = document.getElementById("typer").value;
+    content.textContent = transcript;
+    reply(transcript);
+    }
 });
  
