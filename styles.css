@@ -70,7 +70,6 @@ align-content: center;
 .container{
     text-align: center;
 }
-
 .btld{
 position: relative;
 height : 200px;
@@ -108,15 +107,14 @@ animation-duration: 1.5s;
 }
 @keyframes loadon {
 0% { background-position-y: 0px; }
-50% { background-position-x: 100px ;
-   background-position-x: 0px;  }
+
 100%{ 
      background-position-x: 200px; }
 }
 
 @keyframes loadon1 {
 0% { background-position-y: 0px; }
-50% { background-position-x: 250px;  }
+
 100%{ 
      background-position-x:500px; }
 }
