@@ -105,6 +105,19 @@ animation-name: loadon1;
 animation-iteration-count: infinite;
 animation-duration: 1.5s;
 }
+.txtld{
+    text-align: center;
+display: inline-block;
+background:  -webkit-linear-gradient(
+    left,
+    #dddddd 40%,
+    white 70%,
+    #dddddd 100%
+   ) repeat;;
+animation-name: loadon1;
+animation-iteration-count: infinite;
+animation-duration: 1.5s;
+}
 @keyframes loadon {
 0% { background-position-y: 0px; }
 

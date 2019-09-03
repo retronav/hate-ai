@@ -8,11 +8,13 @@
 <body>
         <div id="cover">
         <div class="container">
+                
                 <div class="btld"></div> 
                 <div class="btld"></div>
-                <br><br><br>
+                <br><br><br><p class = "txtld">Just loading</p><br> <br>
                 <div class="brld"></div><br><br> 
-                <div class="brld"></div></div></div>
+                <div class="brld"></div>
+                </div></div>
                 <div class="bodym" hidden>
     <button id="btn" onclick="recognition.start();"><i class="fas fa-microphone"></i><br>Talk</button>
     <button id="btn" onclick="recognition.stop();"><i class="fas fa-microphone-slash"></i><br>Stop</button>
@@ -32,13 +34,16 @@
     <script src="script.js"></script>
     <script src="inputs.js"></script>
     <script src="reply.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://kit.fontawesome.com/9e07794f8f.js"></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
     <script>
+        
        $(document).ready(function() {
-    $("#cover").hide();
-    $(".bodym").show();
+    $("#cover").fadeOut(2000);
+    setTimeout(function(){
+   $('.bodym').show();// or fade, css display however you'd like.
+}, 2000);
 });
 
         $('#btn').click(function() {
