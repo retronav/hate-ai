@@ -1,7 +1,7 @@
 //arrays containing *very good* replies
 
 function reply(transcript) {
-    responsiveVoice.setDefaultVoice("UK English Male");
+    responsiveVoice.setDefaultVoice("UK English Female");
      
       if (transcript.includes('how are you') || transcript.includes('are you fine') || transcript.includes('how are you doing today')) {
         var finalText = greeting[Math.floor(Math.random()*greeting.length)];
