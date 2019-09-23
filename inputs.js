@@ -6,7 +6,7 @@ const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday
 
 
 const greeting = ["I am sick of you.", "I know you want to flatter me now.", "I am dying.", "I am good you little dumb fellow."];
-const weather = ["Weather is fine, checked on accuweather.com.", "Just go out and check.","I don't know."];
+const weatherQ = ['what is the weather', "tell today's weather", "weather please"  ];
 
 
 
