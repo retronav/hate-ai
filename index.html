@@ -2,56 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
     <title>Hate AI</title>
-    <link rel='shortcut icon' href='lol.ico' type='image/x-icon' />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
-        <div id="cover">
-        <div class="container">
-                
-                <div class="btld"></div> 
-                <div class="btld"></div>
-                <br><br><br><p class = "txtld">Just loading</p><br> <br>
-                <div class="brld"></div><br><br> 
-                <div class="brld"></div>
-                </div></div>
-                <div class="bodym" hidden>
-    <button id="btn" onclick="recognition.start();"><i class="fas fa-microphone"></i><br>Talk</button>
-    <button id="btn" onclick="recognition.stop();"><i class="fas fa-microphone-slash"></i><br>Stop</button>
-                    <br><br>
-    
-    <input id="typer" type="text" placeholder="Type to ask">
-    <button id="typeb"><i class="far fa-paper-plane"></i></button>
-    <p class="ques">Did you just said: </p>
-        <div class="box">
-            <p class="content"></p>
+    <div id="loader">
+        <h1 id="ld-txt">Loading Awesomeness!</h1>
+    </div>
+    <div id="main-wrapper" hidden>
+        <div id="messages"></div>
+        <div id="input-wrapper">
+            <input type="text" id="typer"><br />
+            <button id="textb"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+            <button id="talkb" onclick="recognition.start();"><i class="fas fa-microphone" aria-hidden="true"></i></button>
         </div>
-    <p class="ques">AI says: </p>
-            <div class="box">
-                <p id="replx"></p>
-            </div>
-    </div>       
-    <script src="script.js"></script>
-    <script src="inputs.js"></script>
-    <script src="reply.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    </div>
     <script src="https://kit.fontawesome.com/9e07794f8f.js"></script>
-    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
-    <script>
+    <script src="script.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="reply.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="inputs.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Product Sans&display=swap" rel="stylesheet">
+  <script type="text/javascript">
+    $('document').ready(function() {
         
-       $(document).ready(function() {
-    $("#cover").fadeOut(2000);
-    setTimeout(function(){
-   $('.bodym').show();// or fade, css display however you'd like.
-}, 2000);
-});
 
-        $('#btn').click(function() {
-        $('#btn').css('background-color', '#44CFCB').css('color', '#2A4494');
+            $("#loader").fadeOut(5000).queue(function(n) {
+                $('#main-wrapper').show(); 
+});;
+            
+        
     });
-
     </script>
-    <link href="styles.css" rel="stylesheet">
-    
 </body>
 </html>
