@@ -77,7 +77,9 @@ function reply(transcript) {
                 apiKey: "0UTRbFtkMxAplrohufYco5IY74U8hOes",
                 tag: tag,
                 type: "random",
-                rating: "pg-13"
+                rating: "pg-13",
+                width: "100px",
+                height: "100px"
             };
             let giphyURL = encodeURI(
                 giphy.baseURL +
@@ -87,7 +89,11 @@ function reply(transcript) {
                     "&tag=" +
                     giphy.tag +
                     "&rating=" +
-                    giphy.rating
+                    giphy.rating +
+                    "&height=" +
+                    giphy.height +
+                    "&width=" +
+                    giphy.weight
             );
             console.log(giphyURL);
             $('document').ready(function(){
@@ -99,10 +105,20 @@ function reply(transcript) {
         console.log(_giphy);
         const gif = document.createElement('img');
         gif.setAttribute('src', _giphy.image_original_url);
-        gif.setAttribute('style', 'height : 30vh; width : 30vh; ');
-		replymsg = document.createElement('div');
+        console.log(_giphy.image_original_url);
+        gif.setAttribute('style', 'max-width : 30vh; height: auto;');
+        replymsg = document.createElement('div');
+    replymsg.style.cssText ='padding : 2vh;';
+    const downloadLink = document.createElement('a');
+    downloadLink.setAttribute('download', 'gifs.gif');
+    downloadLink.setAttribute('href', _giphy.image_original_url);
+    downloadLink.style.cssText = 'background : white; color : red; font-size : 2vh; padding : 1vh; border-redius : 20px;';
+    downloadLink.innerHTML = 'Download GIF';
     replymsg.setAttribute('id', 'recieved');
     replymsg.appendChild(gif);
+    const br = document.createElement('br');
+    replymsg.appendChild(br);
+    replymsg.appendChild(downloadLink);
     messages.appendChild(replymsg);
             };
             newGif();
