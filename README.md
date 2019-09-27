@@ -28,3 +28,6 @@ Dev.hasReputation(100%);
 ```
 # Check out
 [Hate AI](https://obnoxiousnerd.github.io/hate-ai/)
+
+# First pre-release rolling
+[1.0.0-alpha](https://github.com/obnoxiousnerd/hate-ai/releases/tag/v1.0.0-alpha)
