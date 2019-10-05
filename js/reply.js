@@ -2,42 +2,42 @@
 function reply(transcript) {
     responsiveVoice.setDefaultVoice("UK English Female");
      
-      if (transcript.includes('how are you') || transcript.includes('are you fine') || transcript.includes('how are you doing today')) {
+      if (transcript.toLowerCase().includes('how are you') || transcript.includes('are you fine') || transcript.includes('how are you doing today')) {
         var finalText = greeting[Math.floor(Math.random()*greeting.length)];
          responsiveVoice.speak(finalText);
          AIsend(finalText);
         }
-     else if(timeQ.includes(transcript)){
+     else if(timeQ.includes(transcript.toLowerCase())){
         var time = now.getHours() + " hours " + now.getMinutes() + " minutes. ";
         var finalText = "The time is "+time;
         responsiveVoice.speak(finalText);
         AIsend(finalText);
     }
-    else if(dateQ.includes(transcript)){
+    else if(dateQ.includes(transcript.toLowerCase())){
         var date = now.getDate() + " " + month[now.getMonth()] + " " + now.getFullYear();
         var finalText = "The date is "+date;
         responsiveVoice.speak(finalText);
         AIsend(finalText);
 
     }
-    else if(dayQ.includes(transcript)){
+    else if(dayQ.includes(transcript.toLowerCase())){
         var day = weekday[now.getDay()];
         var finalText = "Today is "+day;
         responsiveVoice.speak(finalText);
         AIsend(finalText);
     }
-    else if(whoQ.includes(transcript)){
+    else if(whoQ.includes(transcript.toLowerCase())){
         var finalText = "I am a personal assistant that is useful but \n unnamed because my dev went mad making me.";
         responsiveVoice.speak(finalText);
         AIsend(finalText);
     }
-    else if(transcript.endsWith('weather')){
+    else if(transcript.toLowerCase().endsWith('weather')){
         var city = transcript.split("weather").shift();
         let searchLink = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid="+appkey;
         httpRequest(searchLink, parseIt);
     }
 
-    else if(transcript.includes('weather please')){
+    else if(transcript.toLowerCase().includes('weather please')){
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 let lat = position.coords.latitude;
@@ -55,7 +55,7 @@ function reply(transcript) {
           }
     }
 
-        else if(transcript.endsWith('gif')){
+        else if(transcript.toLowerCase().endsWith('gif')){
             var tag = transcript.split("gif").shift();
             const giphy = {
                 baseURL: "https://api.giphy.com/v1/gifs/",
@@ -108,6 +108,11 @@ function reply(transcript) {
             };
             newGif();
         });
+    }
+    else if(transcript.toLowerCase().startsWith('google')){
+        let searchQuery = transcript.toLowerCase().split("google ").pop().split(' ').join('+');
+        let googleURL = 'https://www.google.com/search?q='+searchQuery;
+        let searchWindow = window.open(googleURL, "", "width=800,height=600");
     }
      else{
          var finalText = "Couldn't get that."
