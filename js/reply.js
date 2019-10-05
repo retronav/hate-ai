@@ -98,6 +98,7 @@ function reply(transcript) {
     downloadLink.setAttribute('href', _giphy.image_original_url);
     downloadLink.style.cssText = 'background : white; color : red; font-size : 2vh; padding : 1vh; border-redius : 20px;';
     downloadLink.innerHTML = 'Download GIF';
+    downloadLink.addEventListener('click', gifDownload(_giphy.image_original_url, downloadLink))
     replymsg.setAttribute('id', 'recieved');
     replymsg.appendChild(gif);
     const br = document.createElement('br');

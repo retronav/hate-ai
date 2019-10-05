@@ -73,21 +73,15 @@ replymsg.textContent= finalText;
 messages.appendChild(replymsg);
     responsiveVoice.speak(finalText);
 }
-function gifDownload(url, fileName){
+function gifDownload(url, elm){
 var xhr = new XMLHttpRequest();
 xhr.open("GET", url, true);
 xhr.responseType = "blob";
 xhr.onload = function(){
     var urlCreator = window.URL || window.webkitURL;
     var imageUrl = urlCreator.createObjectURL(this.response);
-    const downloadLink = document.createElement('a');
-downloadLink.style.cssText = 'background : white; color : red; font-size : 2vh; padding : 1vh; border-redius : 20px;';
-downloadLink.innerHTML = 'Download GIF';
-downloadLink.href = imageUrl;
-downloadLink.download = fileName;
-    replymsg.appendChild(downloadLink);
-    downloadLink.click();
-    replymsg.removeChild(downloadLink);
+    document.querySelector(elm).href = imageUrl;
+    document.querySelector(elm).download = 'image.gif';
 }
 xhr.send();
 }
@@ -122,7 +116,7 @@ function setCookie(cname,cvalue,exdays) {
      AIsend(text);
      responsiveVoice.speak(text);
     } else {
-       user = prompt("Please enter your name:","");
+       user = prompt("May I know your name:","");
        if (user != "" && user != null) {
          setCookie("username", user, 30);
        }
