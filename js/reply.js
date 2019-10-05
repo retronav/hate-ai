@@ -112,6 +112,8 @@ function reply(transcript) {
     else if(transcript.toLowerCase().startsWith('google')){
         let searchQuery = transcript.toLowerCase().split("google ").pop().split(' ').join('+');
         let googleURL = 'https://www.google.com/search?q='+searchQuery;
+        AIsend('Searching Google for '+searchQuery.split('+').join(' '));
+        responsiveVoice.speak('Searching Google for '+searchQuery.split('+').join(' '));
         let searchWindow = window.open(googleURL, "", "width=800,height=600");
     }
      else{
