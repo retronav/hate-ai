@@ -7,7 +7,7 @@
     <title>Hate AI</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
-<body>
+<body onload="checkCookie()">
     <div id="loader">
         <h1 id="ld-txt">Loading Awesomeness!</h1>
     </div>
@@ -29,14 +29,10 @@
   <link href="https://fonts.googleapis.com/css?family=Product Sans&display=swap" rel="stylesheet">
   <script type="text/javascript">
     $('document').ready(function() {
-        
-
             $("#loader").fadeOut(100).queue(function(n) {
-                $('#main-wrapper').show(); 
-});;
-       
+                $('#main-wrapper').show();
+                });;
     });
-
         
     </script>
 </body>

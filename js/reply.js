@@ -5,46 +5,31 @@ function reply(transcript) {
       if (transcript.includes('how are you') || transcript.includes('are you fine') || transcript.includes('how are you doing today')) {
         var finalText = greeting[Math.floor(Math.random()*greeting.length)];
          responsiveVoice.speak(finalText);
-         replymsg = document.createElement('div');
-    replymsg.setAttribute('id', 'recieved');
-    replymsg.textContent= finalText;
-    messages.appendChild(replymsg);
+         AIsend(finalText);
         }
      else if(timeQ.includes(transcript)){
         var time = now.getHours() + " hours " + now.getMinutes() + " minutes. ";
         var finalText = "The time is "+time;
         responsiveVoice.speak(finalText);
-        replymsg = document.createElement('div');
-    replymsg.setAttribute('id', 'recieved');
-    replymsg.textContent= finalText;
-    messages.appendChild(replymsg);
+        AIsend(finalText);
     }
     else if(dateQ.includes(transcript)){
         var date = now.getDate() + " " + month[now.getMonth()] + " " + now.getFullYear();
         var finalText = "The date is "+date;
         responsiveVoice.speak(finalText);
-    replymsg = document.createElement('div');
-    replymsg.setAttribute('id', 'recieved');
-    replymsg.textContent= finalText;
-    messages.appendChild(replymsg);
+        AIsend(finalText);
 
     }
     else if(dayQ.includes(transcript)){
         var day = weekday[now.getDay()];
         var finalText = "Today is "+day;
         responsiveVoice.speak(finalText);
-    replymsg = document.createElement('div');
-    replymsg.setAttribute('id', 'recieved');
-    replymsg.textContent= finalText;
-    messages.appendChild(replymsg);
+        AIsend(finalText);
     }
     else if(whoQ.includes(transcript)){
         var finalText = "I am a personal assistant that is useful but \n unnamed because my dev went mad making me.";
         responsiveVoice.speak(finalText);
-    replymsg = document.createElement('div');
-    replymsg.setAttribute('id', 'recieved');
-    replymsg.textContent= finalText;
-    messages.appendChild(replymsg);
+        AIsend(finalText);
     }
     else if(transcript.endsWith('weather')){
         var city = transcript.split("weather").shift();
@@ -95,7 +80,6 @@ function reply(transcript) {
                     "&width=" +
                     giphy.weight
             );
-            console.log(giphyURL);
             $('document').ready(function(){
                 
                 var newGif = () => $.getJSON(giphyURL, json => renderGif(json.data));
@@ -120,6 +104,7 @@ function reply(transcript) {
     replymsg.appendChild(br);
     replymsg.appendChild(downloadLink);
     messages.appendChild(replymsg);
+    responsiveVoice.speak('one '+ tag +' GIF for you');
             };
             newGif();
         });
@@ -127,9 +112,6 @@ function reply(transcript) {
      else{
          var finalText = "Couldn't get that."
          responsiveVoice.speak(finalText);
-        replymsg = document.createElement('div');
-    replymsg.setAttribute('id', 'recieved');
-    replymsg.textContent= finalText;
-    messages.appendChild(replymsg);
+         AIsend(finalText);
      }
  }

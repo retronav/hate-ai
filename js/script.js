@@ -53,7 +53,13 @@ messages.appendChild(msgsent);
 
      }
  }
-
+/* Function for sending messages*/
+const AIsend = (finalText) => {
+    replymsg = document.createElement('div');
+    replymsg.setAttribute('id', 'recieved');
+    replymsg.textContent= finalText;
+    messages.appendChild(replymsg);
+}
  function parseIt(response) {    
     let jsonObject = JSON.parse(response);
     var name = jsonObject.name;
@@ -67,4 +73,58 @@ replymsg.textContent= finalText;
 messages.appendChild(replymsg);
     responsiveVoice.speak(finalText);
 }
-
+function gifDownload(url, fileName){
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url, true);
+xhr.responseType = "blob";
+xhr.onload = function(){
+    var urlCreator = window.URL || window.webkitURL;
+    var imageUrl = urlCreator.createObjectURL(this.response);
+    const downloadLink = document.createElement('a');
+downloadLink.style.cssText = 'background : white; color : red; font-size : 2vh; padding : 1vh; border-redius : 20px;';
+downloadLink.innerHTML = 'Download GIF';
+downloadLink.href = imageUrl;
+downloadLink.download = fileName;
+    replymsg.appendChild(downloadLink);
+    downloadLink.click();
+    replymsg.removeChild(downloadLink);
+}
+xhr.send();
+}
+/** Cookie function to get User's name */
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  
+  function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+     const text = "Welcome, "+user+". What can I do for you?";
+     AIsend(text);
+     responsiveVoice.speak(text);
+    } else {
+       user = prompt("Please enter your name:","");
+       if (user != "" && user != null) {
+         setCookie("username", user, 30);
+       }
+    }
+  }
