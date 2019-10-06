@@ -13,6 +13,15 @@ msgsent.textContent = transcript;
 messages.appendChild(msgsent);
 reply(transcript);
 });
+typer.addEventListener('keydown', function(e){
+  if(e.keyCode == 13)
+    {const transcript = typer.value;
+    msgsent = document.createElement('div');
+msgsent.setAttribute('id', 'sent');
+msgsent.textContent = transcript;
+messages.appendChild(msgsent);
+reply(transcript);}
+});
 
 //voice feature
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -72,18 +81,6 @@ replymsg.setAttribute('id', 'recieved');
 replymsg.textContent= finalText;
 messages.appendChild(replymsg);
     responsiveVoice.speak(finalText);
-}
-function gifDownload(url, elm){
-var xhr = new XMLHttpRequest();
-xhr.open("GET", url, true);
-xhr.responseType = "blob";
-xhr.onload = function(){
-    var urlCreator = window.URL || window.webkitURL;
-    var imageUrl = urlCreator.createObjectURL(this.response);
-    document.querySelector(elm).href = imageUrl;
-    document.querySelector(elm).download = 'image.gif';
-}
-xhr.send();
 }
 /** Cookie function to get User's name */
 function setCookie(cname,cvalue,exdays) {
